@@ -11,6 +11,13 @@ $(document).ready(function () {
                 );
             },
         },
+        columns: [
+            { data: "email" },
+            { data: "lastName" },
+            { data: "firstName" },
+            { data: "ward" },
+            { data: "permissionFlags" },
+        ]
     });
 });
 
