@@ -29,9 +29,6 @@ $(document).ready(async function () {
         console.log(error);
     }
 
-    console.log(shops);
-    console.log(tests);
-
     const table = $("#examTable").DataTable({
         searching: true,
         ajax: {
