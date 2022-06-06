@@ -76,9 +76,16 @@
         <!-- End navigation bar -->
 
         <div class="container">
+            <div class="row col-md-2" style="padding-left: 25px;">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addPlan">
+                    Lên kế hoạch thanh tra
+                </button>
+            </div>
+
             <div
                 class="row height d-flex justify-content-center align-items-center"
             >
+
                 <div class="row" style="padding: 10px">
                     <div class="col-md-10">
                         <div class="card"></div>
@@ -267,6 +274,86 @@
                             data-bs-dismiss="modal"
                         >
                             Hủy chứng nhận
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal new examination plan -->
+        <div
+            class="modal fade"
+            id="addPlan"
+            tabindex="-1"
+            aria-labelledby="addPlanLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addPlanLabel">
+                            Lên kế hoạch thanh tra
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row-md-1">
+                            Trạng thái
+                        </div>
+
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select"
+                            name="select"
+                        >
+                            <option value="Kiểm tra tại cơ sở">Kiểm tra tại cơ sở</option>
+                            <option value="Lấy mẫu và kiểm định">Lấy mẫu và kiểm định</option>
+                            <option value="Kết luận">Kết luận</option>
+                            <option value="Xử lý">Xử lý</option>
+                        </select>
+
+                        <div class="row-md-1">
+                            Lên kế hoạch từ:
+                        </div>
+                        
+                        <div class="datetimepicker">
+                            <input type="date" id="dateFrom" value="2022-01-01" />
+                            <span></span>
+                            <input type="time" id="timeFrom" value="00:00" />
+                        </div> <br />
+
+                        <div class="row-md-1">
+                            Đến:
+                        </div>
+                        <div class="datetimepicker">
+                            <input type="date" id="dateTo" value="2023-01-01" />
+                            <span></span>
+                            <input type="time" id="timeTo" value="00:00" />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button
+                            type="button"
+                            id="addPlanBtn"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Lên kế hoạch
                         </button>
                     </div>
                 </div>

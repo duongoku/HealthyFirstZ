@@ -145,3 +145,15 @@ document.getElementById("cancelCert").onclick = function () {
 getShopInfo();
 
 document.getElementById("logoutButton").onclick = logout;
+
+document.getElementById("addPlanBtn").onclick = function () {
+    alert("Đã lên kế hoạch thanh tra");
+
+    let dateFrom = document.getElementById("dateFrom").value;
+    let timeFrom = document.getElementById("timeFrom").value;
+
+    let dateTo = document.getElementById("dateTo").value;
+    let timeTo = document.getElementById("timeTo").value;
+
+    // do duongoku things
+}
