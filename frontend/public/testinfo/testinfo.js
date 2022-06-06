@@ -50,9 +50,7 @@ fetch(`/tests/${testId}`, {
         document.querySelector(".card").appendChild(body);
     });
 
-document.getElementById("logoutButton").onclick = logout;
-
-document.getElementById("updateResultBtn").onclick = function () {
+async function updateTest() {
     let dateAt = document.getElementById("dateAt").value;
     let timeAt = document.getElementById("timeAt").value;
     let combinedTimeAt = `${dateAt}T${timeAt}:00.000Z`;
@@ -61,13 +59,42 @@ document.getElementById("updateResultBtn").onclick = function () {
     let timeReturn = document.getElementById("timeReturn").value;
     let combinedTimeReturn = `${dateReturn}T${timeReturn}:00.000Z`;
 
-    const status = document.getElementById("select").value;
+    const status = document.getElementById("status").value;
 
     const result = document.getElementById("result").value;
 
-    const unit = document.getElementById("unit").value;
+    const unit =
+        document.getElementById("unit").value === ""
+            ? "Chưa xác định"
+            : document.getElementById("unit").value;
 
-    alert("Đã cập nhật kết quả thanh tra!");
-
-    // do duongoku things
+    fetch(`/tests/${testId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("accessToken"),
+        },
+        body: JSON.stringify({
+            taken: combinedTimeAt,
+            status: status,
+            result: result,
+            processing_unit: unit,
+            result_date: combinedTimeReturn,
+        }),
+    })
+        .then((response) => {
+            if (response.status === 204) {
+                alert("Đã cập nhật kết quả thanh tra!");
+            } else {
+                alert("Cập nhật thất bại!");
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            alert("Cập nhật thất bại!");
+        });
 }
+
+document.getElementById("logoutButton").onclick = logout;
+
+document.getElementById("updateResultBtn").onclick = updateTest;

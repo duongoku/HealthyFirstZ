@@ -66,7 +66,7 @@ $(document).ready(function () {
                     // navigate to shop page
                     if (type === "display") {
                         return $("<a>")
-                            .attr("href", `/shopinfo/${row._id}`) // do duongoku things
+                            .attr("href", `/shopinfo/${row._id}`)
                             .text(data)
                             .wrap("<div></div>")
                             .parent()
