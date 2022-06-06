@@ -48,5 +48,7 @@ function logout() {
 
 // Check if token is in localStorage
 if (localStorage.getItem("accessToken") === null || localStorage.getItem("refreshToken") === null || localStorage.getItem("currentUser") === null) {
-    window.location.href = "/login";
+    if (window.location.href !== "/login") {
+        window.location.href = "/login";
+    }
 }
