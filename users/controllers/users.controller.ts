@@ -9,7 +9,7 @@ const log: debug.IDebugger = debug("app:users-controller");
 class UsersController {
     async listUsers(req: express.Request, res: express.Response) {
         const users = await usersService.list(100, 0);
-        res.status(200).send(users);
+        res.status(200).send({data: users});
     }
 
     async getUserById(req: express.Request, res: express.Response) {
