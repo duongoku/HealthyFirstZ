@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "_id": "fcdcbc9de896d1f58abbbac8",
+            "name": "Smith, Bernier and Harvey",
+            "address": "60389 Connelly Track",
+            "ward": "Wolff Mall",
+            "phone": "0784576176",
+            "type": "Cơ sở chế biến thực phẩm",
+            "isValid": null,
+            "validBefore": "2022-08-11T16:01:58.436Z"
+        }
+    ]
+}

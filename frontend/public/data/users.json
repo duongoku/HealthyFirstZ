@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "email": "goku@gmail.com",
+            "password": "secret",
+            "ward": "Hettinger Heights",
+            "firstName": "Dương",
+            "lastName": "Nguyễn",
+            "permissionFlags": "1"
+        }
+    ]
+}

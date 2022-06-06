@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title>FoodShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button type="button" onclick="logout()" class="btn btn-light" style="float: right; margin-right: 20px; margin-top: 10px;">
+        Đăng xuất
+    </button>
+
+    <!-- navigation bar -->
+    <div class="header" style="padding: 20;">
+        <h1>Healthy first</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 10px; padding-left: 30px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../home/index.html">Trang chủ</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="../foodshop/foodshop.html">Quản lý cơ sở thực phẩm</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="../shopexam/shopexam.html">Quản lý hoạt động thanh tra</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <br>
+    <br>
+    <!-- End navigation bar -->
+    
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="row" style="padding: 10px;">
+                <div class="col-md-10">
+                    <div class="card">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="padding: 20px;">
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#issueModal">
+                        Cấp giấy chứng nhận
+                    </button>
+                </div>
+
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#extendModal">
+                        Gia hạn chứng nhận
+                    </button>
+                </div>
+
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                        Hủy giấy chứng nhận
+                    </button>
+                </div>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../user/user.html">Tài khoản</a>
+                </li>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Modal new certificate-->
+    <div class="modal fade" id="issueModal" tabindex="-1" aria-labelledby="issueModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="issueModalLabel">Cấp giấy chứng nhận</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                    Cấp chứng nhận đến ngày: 
+                    <div class="datetimepicker">
+                        <input type="date" id="date1" value="2023-01-01">
+                        <span></span>
+                        <input type="time" id="time1" value="00:00">
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy thay đổi</button>
+                    <button type="button" onclick="issueCert()" class="btn btn-primary" data-bs-dismiss="modal">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal extend certificate-->
+    <div class="modal fade" id="extendModal" tabindex="-1" aria-labelledby="extendModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="extendModalLabel">Gia hạn chứng nhận</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                    Gia hạn chứng nhận đến ngày: 
+                    <div class="datetimepicker">
+                        <input type="date" id="date2" value="2023-01-01">
+                        <span></span>
+                        <input type="time" id="time2" value="00:00">
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy thay đổi</button>
+                    <button type="button" onclick="extendCert()" class="btn btn-primary" data-bs-dismiss="modal">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cancel certificate -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel">Cấp giấy chứng nhận</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    Bạn chắc chắn muốn hủy chứng nhận của cửa hàng này ?
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" id="cancelSaveChange" onclick="cancelCert()" class="btn btn-primary" data-bs-dismiss="modal">
+                        Hủy chứng nhận
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../main.js"></script>
+    <script type="text/javascript" src="shopinfo.js"></script>
+</body>
+</html>

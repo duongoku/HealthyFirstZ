@@ -1,0 +1,452 @@
+{
+    "data": [
+        {
+            "_id": "fcdcbc9de896d1f58abbbac8",
+            "from": "2021-07-01T19:54:19.074Z",
+            "to": "2023-04-05T20:10:54.792Z",
+            "shop_id": "cb3b3ee6b2783f342dcb2aed",
+            "status": "Xử lý",
+            "test_id": "vvzhssgiso4pnk5jyri3eh96r"
+        },
+        {
+            "_id": "aa4c207d3d4d8edf97d9df21",
+            "from": "2021-06-15T16:36:15.756Z",
+            "to": "2023-02-03T01:00:29.914Z",
+            "shop_id": "9dbaf5e354afabcffefece75",
+            "status": "Xử lý",
+            "test_id": "bk1fmzy3n7m5znk9egh8m5c3o"
+        },
+        {
+            "_id": "e63b4e8ec02dce2ffdabf1d9",
+            "from": "2021-09-07T20:10:58.012Z",
+            "to": "2022-06-11T23:13:26.788Z",
+            "shop_id": "a6a5aabf9fc698c3bb11ef4b",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "bvex27okkv9iix3xk2x9b0ou4"
+        },
+        {
+            "_id": "efc6548cc03c803ec5fa6f95",
+            "from": "2021-09-01T16:38:13.709Z",
+            "to": "2022-12-31T23:16:12.743Z",
+            "shop_id": "abfeeb2308d3b24fe6e52a5b",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "guzp4arteeov8kbvyolqnijy8"
+        },
+        {
+            "_id": "e89dda0a6fe668da9d2262c7",
+            "from": "2021-11-01T00:05:10.712Z",
+            "to": "2022-12-23T02:02:32.443Z",
+            "shop_id": "abfeeb2308d3b24fe6e52a5b",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "d3fzw9tjpg33xcpgzu5wv15im"
+        },
+        {
+            "_id": "32bcdb9c3801ff899f1d8f0c",
+            "from": "2022-03-12T10:49:43.320Z",
+            "to": "2022-06-08T22:44:50.836Z",
+            "shop_id": "baa4c207d3d4d8edf97d9df2",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "c7606sg8vcxxlpl1s5im1kp8z"
+        },
+        {
+            "_id": "e5debdcaaf6c844444eca9af",
+            "from": "2022-03-13T15:58:46.056Z",
+            "to": "2023-02-08T01:42:12.370Z",
+            "shop_id": "43e78177a78e7c88d0fc0ef3",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "dm6j0u2qohgojlwpzg7gnw940"
+        },
+        {
+            "_id": "5ad7d8ec7cbd0d669bd4eeaf",
+            "from": "2021-12-10T05:28:19.894Z",
+            "to": "2022-08-22T07:58:45.484Z",
+            "shop_id": "0b9e1b504c5a280a2fd5f8f1",
+            "status": "Xử lý",
+            "test_id": "g0p75fqdng796ltvq4oi946pp"
+        },
+        {
+            "_id": "8acc4433a27fe0aaa2d41aca",
+            "from": "2021-11-03T08:07:16.741Z",
+            "to": "2022-06-21T07:42:58.690Z",
+            "shop_id": "fbbe3a8e90f06b6d7ab8cd1a",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "x0otszapl62ihkzsvlc7yg8vy"
+        },
+        {
+            "_id": "aefbadfda6cc4db0f7c3bffa",
+            "from": "2021-09-02T14:51:43.277Z",
+            "to": "2022-12-03T05:16:49.244Z",
+            "shop_id": "d0adbba6ee7f4beacd08ec93",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "ei48z3evkzcyswercbe2aer8x"
+        },
+        {
+            "_id": "271ef00ba63d151eeb599acc",
+            "from": "2021-07-25T13:42:12.691Z",
+            "to": "2022-10-21T00:28:04.245Z",
+            "shop_id": "c3bef7cc9a25ca1f7de2f4e8",
+            "status": "Kết luận",
+            "test_id": "9ggiofpuafdt6is32np7suro9"
+        },
+        {
+            "_id": "381c06d824bae0fba1abd6ac",
+            "from": "2022-01-04T08:31:14.002Z",
+            "to": "2023-05-20T20:46:04.550Z",
+            "shop_id": "e7e3f23da1af128cacc867fa",
+            "status": "Xử lý",
+            "test_id": "5on9j4be5y564wkj3gwv2gsqv"
+        },
+        {
+            "_id": "82d9fafc7fa0da5a30b6f5ab",
+            "from": "2021-10-31T23:06:37.597Z",
+            "to": "2023-05-18T18:43:52.100Z",
+            "shop_id": "cbf6fc31bacfbdd74fa5deae",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "wzt353mmey2xfg9quq1by4cfc"
+        },
+        {
+            "_id": "80b4c8bee2de2d2917155dc0",
+            "from": "2021-11-26T00:09:56.980Z",
+            "to": "2022-06-10T08:50:28.491Z",
+            "shop_id": "afc3dd03bd32bcdb9c3801ff",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "r4d0h4zm8zdz1eb5tmthnzd2b"
+        },
+        {
+            "_id": "bb615fe85deebc9ac96cfa99",
+            "from": "2022-01-24T01:45:09.176Z",
+            "to": "2023-05-24T07:43:20.744Z",
+            "shop_id": "a24dc04a26237f0d90e88c17",
+            "status": "Xử lý",
+            "test_id": "t9zdypwwa4z8883hyw8cod2xq"
+        },
+        {
+            "_id": "2dd528887ae5b3b966dc75ab",
+            "from": "2021-11-13T23:10:01.428Z",
+            "to": "2023-05-14T17:09:51.124Z",
+            "shop_id": "3866ae7ddcde67acfbb2eb80",
+            "status": "Kết luận",
+            "test_id": "5y4zpgp2mao5gfp4dl3dyw2y0"
+        },
+        {
+            "_id": "cf63d5d48ccf56af805dbf66",
+            "from": "2022-01-19T12:20:46.492Z",
+            "to": "2023-04-27T07:08:00.390Z",
+            "shop_id": "2dc956de2afde08e5e54a000",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "1w9bgw3iciqdojmypw7ocnojv"
+        },
+        {
+            "_id": "5b36c0df60a80bce71b83097",
+            "from": "2021-07-08T22:03:59.307Z",
+            "to": "2023-01-17T18:52:33.702Z",
+            "shop_id": "fbbe3a8e90f06b6d7ab8cd1a",
+            "status": "Kết luận",
+            "test_id": "joqyd08nglyluyw0opftoinc1"
+        },
+        {
+            "_id": "be2b9fb8fb1a5c9bddddd728",
+            "from": "2021-06-11T18:14:59.468Z",
+            "to": "2022-12-20T11:14:34.005Z",
+            "shop_id": "5c9bddddd728fbddb8ebb2ee",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "tay1x4136be8ykaw5kvlg8wk5"
+        },
+        {
+            "_id": "3e79d17fe5d091b1ad4a9d4e",
+            "from": "2021-09-16T14:54:40.108Z",
+            "to": "2022-12-14T17:38:44.620Z",
+            "shop_id": "b843af4edc021adc8523fcd1",
+            "status": "Xử lý",
+            "test_id": "0zy6nbao72xlbheam8wifdxgl"
+        },
+        {
+            "_id": "79fd272e7edce880ff79feee",
+            "from": "2021-08-11T21:46:47.811Z",
+            "to": "2022-09-10T00:23:47.979Z",
+            "shop_id": "e858c52a4eb62bc28351cfa0",
+            "status": "Kết luận",
+            "test_id": "5r2084f9ivr6yf4b3llxqxu1x"
+        },
+        {
+            "_id": "dfd8b843af4edc021adc8523",
+            "from": "2021-06-10T04:06:57.843Z",
+            "to": "2023-04-14T10:03:35.908Z",
+            "shop_id": "8afbea303911547e14dcfb33",
+            "status": "Xử lý",
+            "test_id": "yf3u14h9ge8e2o4cupende0fd"
+        },
+        {
+            "_id": "de1dceeef7b62c8b867f0ca8",
+            "from": "2022-04-25T14:25:10.927Z",
+            "to": "2022-12-15T10:27:59.992Z",
+            "shop_id": "edfd0b3bd1cf5fe5debdcaaf",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "vw10jxeyisdz6c0uirupdm8b2"
+        },
+        {
+            "_id": "b164020531b14c831cebdad3",
+            "from": "2022-02-03T10:08:22.055Z",
+            "to": "2022-08-16T12:35:39.203Z",
+            "shop_id": "998fb7dfad03ffe0fd3cab32",
+            "status": "Xử lý",
+            "test_id": "dx51cw3evvoo6zxrkdgind9dj"
+        },
+        {
+            "_id": "52a4eb62bc28351cfa0d3cd3",
+            "from": "2022-05-05T23:20:02.030Z",
+            "to": "2023-02-10T04:39:48.321Z",
+            "shop_id": "baa4c207d3d4d8edf97d9df2",
+            "status": "Kết luận",
+            "test_id": "jexeix9pv1df038zbkungdgoc"
+        },
+        {
+            "_id": "cdbedf88df1bfe55b4b3aef6",
+            "from": "2021-12-10T10:00:03.829Z",
+            "to": "2022-11-17T01:14:15.347Z",
+            "shop_id": "2dc956de2afde08e5e54a000",
+            "status": "Kết luận",
+            "test_id": "au2tq3z5sa821fe3vkf8alx4r"
+        },
+        {
+            "_id": "fde08e5e54a000ee8f8fbdfb",
+            "from": "2021-06-21T08:10:03.411Z",
+            "to": "2022-11-17T23:00:00.579Z",
+            "shop_id": "fee75dff80a422f035f97c44",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "a3v8427b6medqqioh506f2297"
+        },
+        {
+            "_id": "7e14dcfb337df2eacecb0a1e",
+            "from": "2022-05-06T10:47:46.997Z",
+            "to": "2022-06-22T16:25:43.891Z",
+            "shop_id": "bce71b83097dd06f4f22c6fb",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "otjhlvwqkefdpicwzqv05oox1"
+        },
+        {
+            "_id": "fd3cab327de5ed6f72dafc35",
+            "from": "2022-03-02T21:32:30.390Z",
+            "to": "2022-08-17T00:58:55.667Z",
+            "shop_id": "0b9e1b504c5a280a2fd5f8f1",
+            "status": "Xử lý",
+            "test_id": "btb7gsf9cawzq1q6aikds8soc"
+        },
+        {
+            "_id": "eafad3fd790a79ac3d1a9ded",
+            "from": "2021-08-30T02:48:22.731Z",
+            "to": "2022-10-29T04:38:27.085Z",
+            "shop_id": "ba8aac8f6f5dbc0c506fd29a",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "kv7xq4xcn6q45wq2hz33dvqkk"
+        },
+        {
+            "_id": "867fac6eecbca1d2cdcaf50f",
+            "from": "2021-08-26T11:41:15.685Z",
+            "to": "2023-03-02T05:22:38.835Z",
+            "shop_id": "fcdcbc9de896d1f58abbbac8",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "hrt9ax5zb5ti5v8c28pqezbip"
+        },
+        {
+            "_id": "878abbf47ff3d6f3974aebac",
+            "from": "2021-10-27T04:24:44.682Z",
+            "to": "2023-04-25T07:41:43.902Z",
+            "shop_id": "e7e3f23da1af128cacc867fa",
+            "status": "Xử lý",
+            "test_id": "4byhhq22avwqc6yxfidzs7gj2"
+        },
+        {
+            "_id": "6c6bdbe0b2ffccefa7ddc949",
+            "from": "2021-08-27T04:11:48.147Z",
+            "to": "2022-11-03T03:49:03.792Z",
+            "shop_id": "ba8aac8f6f5dbc0c506fd29a",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "34i1xh8lowlx0dhxpj1kv6i41"
+        },
+        {
+            "_id": "542e4cb2d6ba00f91af5bc5a",
+            "from": "2021-12-07T18:45:56.619Z",
+            "to": "2022-08-29T18:02:23.409Z",
+            "shop_id": "576efa1a46bc8b5bf7eafad3",
+            "status": "Kết luận",
+            "test_id": "ohv68z44cg922xny9pgca9x9g"
+        },
+        {
+            "_id": "2db03b69d7a60594eac7a7f1",
+            "from": "2022-02-27T17:11:25.618Z",
+            "to": "2022-06-09T17:35:23.796Z",
+            "shop_id": "8b24f28ccf7fbd9b778168b5",
+            "status": "Kết luận",
+            "test_id": "bxs4phk3p8fo0i0jit221wynu"
+        },
+        {
+            "_id": "e300ee0644df2285afceab48",
+            "from": "2022-01-05T06:33:08.231Z",
+            "to": "2023-03-14T08:45:37.024Z",
+            "shop_id": "e670ec2efc6548cc03c803ec",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "epxw9i5cs4zr2v33bri0pyym4"
+        },
+        {
+            "_id": "c765eb53cdfbbdbf1caa9a4d",
+            "from": "2022-01-01T01:30:14.130Z",
+            "to": "2022-08-19T20:11:52.768Z",
+            "shop_id": "43e78177a78e7c88d0fc0ef3",
+            "status": "Xử lý",
+            "test_id": "1bw7tbjzuoy837m2zdztl94dk"
+        },
+        {
+            "_id": "a0f49f37dec65e5a978b12e8",
+            "from": "2021-08-21T10:24:48.520Z",
+            "to": "2022-08-24T10:00:10.311Z",
+            "shop_id": "e7e3f23da1af128cacc867fa",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "7cppr0dm58n9bsxysbztv30m2"
+        },
+        {
+            "_id": "ad329dd72001ca9cb7e56a83",
+            "from": "2021-12-09T04:23:17.589Z",
+            "to": "2023-01-15T20:31:50.918Z",
+            "shop_id": "abfeeb2308d3b24fe6e52a5b",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "yq4qpaxsnwfs7udup8ntxpvbt"
+        },
+        {
+            "_id": "eee6b808eceec6b03866ae7d",
+            "from": "2021-10-27T08:09:46.071Z",
+            "to": "2023-04-14T16:27:12.209Z",
+            "shop_id": "a24dc04a26237f0d90e88c17",
+            "status": "Kết luận",
+            "test_id": "nsd11twt013msi26v5wr2kyzi"
+        },
+        {
+            "_id": "f0fb28ef55a9a24dc04a2623",
+            "from": "2022-01-25T03:12:49.495Z",
+            "to": "2023-02-15T16:45:10.510Z",
+            "shop_id": "ba8aac8f6f5dbc0c506fd29a",
+            "status": "Xử lý",
+            "test_id": "2mag6nyl57sclakzi8y8d2syj"
+        },
+        {
+            "_id": "a8ffad02b9dbaf5e354afabc",
+            "from": "2021-06-05T22:26:01.979Z",
+            "to": "2023-05-19T06:20:26.598Z",
+            "shop_id": "a24dc04a26237f0d90e88c17",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "wfx1mr3i9s6qms5afsjj8h8o9"
+        },
+        {
+            "_id": "0d2c62f43e78177a78e7c88d",
+            "from": "2022-05-26T15:09:16.676Z",
+            "to": "2023-02-13T05:57:00.410Z",
+            "shop_id": "fee75dff80a422f035f97c44",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "voazf4sqo8xim93nvor1pj1ne"
+        },
+        {
+            "_id": "c36c4f3dafbbcfbd7010f7dc",
+            "from": "2022-03-21T15:57:33.384Z",
+            "to": "2023-04-16T19:28:18.877Z",
+            "shop_id": "3dafbbcfbd7010f7dc4d9fe1",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "sk5z2ein7e8riih8x9i97j0p3"
+        },
+        {
+            "_id": "e9fbbe3a8e90f06b6d7ab8cd",
+            "from": "2022-05-08T04:42:09.369Z",
+            "to": "2022-11-22T22:03:35.481Z",
+            "shop_id": "e670ec2efc6548cc03c803ec",
+            "status": "Xử lý",
+            "test_id": "ryapjijvqvyrasssnkkqrgxs1"
+        },
+        {
+            "_id": "a3dae10ba4e63f009d99bbab",
+            "from": "2021-09-22T21:42:21.148Z",
+            "to": "2023-01-26T07:05:59.720Z",
+            "shop_id": "00ea95ec9546eb2fac2f59f0",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "tbaywynmrmbz5vnrcbfdu70hs"
+        },
+        {
+            "_id": "feeb2308d3b24fe6e52a5b1d",
+            "from": "2022-03-20T01:45:13.977Z",
+            "to": "2023-06-04T14:51:05.079Z",
+            "shop_id": "cb3b3ee6b2783f342dcb2aed",
+            "status": "Kết luận",
+            "test_id": "4ub2ay9rrez2jpxke53menayh"
+        },
+        {
+            "_id": "aebade5d5fea82a87f4662bd",
+            "from": "2022-03-15T17:19:46.557Z",
+            "to": "2023-02-18T11:25:01.158Z",
+            "shop_id": "2dc956de2afde08e5e54a000",
+            "status": "Kết luận",
+            "test_id": "1wi92luiyj9x3aaz7w0gwtsra"
+        },
+        {
+            "_id": "ee7f4beacd08ec93d078a3b3",
+            "from": "2022-04-14T09:52:53.083Z",
+            "to": "2022-11-26T19:26:39.881Z",
+            "shop_id": "bce71b83097dd06f4f22c6fb",
+            "status": "Xử lý",
+            "test_id": "ygobymjhszd8codznxc9wpzd1"
+        },
+        {
+            "_id": "a422f035f97c448afe2e0bbc",
+            "from": "2021-08-09T08:58:09.877Z",
+            "to": "2023-05-28T13:01:04.954Z",
+            "shop_id": "bce71b83097dd06f4f22c6fb",
+            "status": "Kết luận",
+            "test_id": "0r7eapgs4buzpnrv3kiq4r9wx"
+        },
+        {
+            "_id": "3aca9ae821fedf1babfca8de",
+            "from": "2021-08-16T17:18:38.013Z",
+            "to": "2022-11-23T01:43:26.748Z",
+            "shop_id": "726faaa116dda73fe9b8fb4a",
+            "status": "Xử lý",
+            "test_id": "hgahvrl2cou5sozcuueg48ur2"
+        },
+        {
+            "_id": "f7de2f4e8fa00baca79165f7",
+            "from": "2021-10-04T13:55:33.049Z",
+            "to": "2022-11-10T11:58:32.869Z",
+            "shop_id": "afc3dd03bd32bcdb9c3801ff",
+            "status": "Kiểm tra tại cơ sở",
+            "test_id": "j1u91qrmsrerquepbz8wsl1l8"
+        },
+        {
+            "_id": "06fd29aec3874b2da595f1ec",
+            "from": "2022-04-12T04:03:28.908Z",
+            "to": "2022-06-14T20:56:30.052Z",
+            "shop_id": "afc3dd03bd32bcdb9c3801ff",
+            "status": "Kết luận",
+            "test_id": "7lnl32nptroqf5dgeeldv2xs1"
+        },
+        {
+            "_id": "0332f457cbddaa4dafcebc0b",
+            "from": "2022-02-04T05:34:08.862Z",
+            "to": "2022-09-24T22:06:45.605Z",
+            "shop_id": "b843af4edc021adc8523fcd1",
+            "status": "Kết luận",
+            "test_id": "jme3yo3sy61ejiyggs3yysg2t"
+        },
+        {
+            "_id": "be185f3e4ab0edaef555acde",
+            "from": "2021-11-11T12:25:57.216Z",
+            "to": "2022-10-18T04:40:27.193Z",
+            "shop_id": "cbfa522b0ea5cedde08aefc0",
+            "status": "Xử lý",
+            "test_id": "enp43u5muyrlatdzxsthml7k1"
+        },
+        {
+            "_id": "198e9c2c00057754cbea0b9f",
+            "from": "2021-10-03T23:33:18.616Z",
+            "to": "2022-07-27T06:05:05.790Z",
+            "shop_id": "e7edce880ff79feeeb5fcdfa",
+            "status": "Lấy mẫu và kiểm định",
+            "test_id": "4k3fhqkw7rjup18b0iteu8dbx"
+        }
+    ]
+}
