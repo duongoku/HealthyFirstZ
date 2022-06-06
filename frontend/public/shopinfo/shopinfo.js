@@ -63,8 +63,6 @@ function getShopInfo() {
         });
 }
 
-
-
 document.getElementById("issueCert").onclick = function () {
     const dateEl = document.getElementById("date1").value;
     const timeEl = document.getElementById("time1").value;
@@ -91,7 +89,7 @@ document.getElementById("issueCert").onclick = function () {
             alert("Có lỗi xảy ra khi cấp giấy chứng nhận");
             console.log(err);
         });
-}
+};
 
 document.getElementById("extendCert").onclick = function () {
     var dateEl = document.getElementById("date2").value;
@@ -119,7 +117,7 @@ document.getElementById("extendCert").onclick = function () {
             alert("Có lỗi xảy ra khi gia hạn chứng nhận");
             console.log(err);
         });
-}
+};
 
 document.getElementById("cancelCert").onclick = function () {
     fetch(`/shops/${shopId}/users/${userId}`, {
@@ -142,6 +140,8 @@ document.getElementById("cancelCert").onclick = function () {
             alert("Có lỗi xảy ra khi hủy chứng nhận");
             console.log(err);
         });
-}
+};
 
 getShopInfo();
+
+document.getElementById("logoutButton").onclick = logout;
