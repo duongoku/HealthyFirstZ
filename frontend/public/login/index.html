@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FoodShop</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/cdn/bootstrap.min.css" rel="stylesheet" />
+        <script src="/cdn/bootstrap.bundle.min.js"></script>
+        <script src="/main.js"></script>
+        <script src="login.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- TODO: Nút login bị lỗi gì đó nên mình phải dùng console để gọi hàm login, mình đang để default value là admin account -->
+        <div class="header" style="padding: 20">
+            <h1>Healthy first</h1>
+        </div>
+
+        <!-- login page taken from source: https://codepen.io/colorlib/pen/rxddKy -->
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <input
+                        id="email"
+                        type="text"
+                        placeholder="email"
+                        value="admin@admin.com"
+                    />
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="password"
+                        value="admin"
+                    />
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="login();"
+                    >
+                        login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,29 +1,28 @@
-
 function login() {
-    //login action
-    // do duongoku things
-
-    console.log("login");
-    var username = $('#username').val();
-    var password = $('#password').val();
-    var url = "http://localhost:8000/login";
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var url = "/auth";
     var data = {
-        username: username,
-        password: password
+        email: email,
+        password: password,
     };
-    $.ajax({
-        url: url,
-        type: "POST",
-        data: JSON.stringify(data),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            if (data.status == "success") {
-                window.location.href = "../index/index.html";
-            } else {
-                $('#error').text(data.message);
-            }
-        }
-    });
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            localStorage.setItem("accessToken", data.accessToken);
+            localStorage.setItem("refreshToken", data.refreshToken);
+            localStorage.setItem("currentUser", data.userId);
+            window.location.href = "/user";
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }

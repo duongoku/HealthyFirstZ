@@ -1,12 +1,21 @@
-document.writeln(`<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>`)
-document.writeln(`<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>`)
-document.writeln(`<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>`)
-document.writeln(`<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>`)
-document.writeln(`<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>`)
+document.writeln(`<script src="/cdn/jquery-3.2.1.slim.min.js"></script>`);
+document.writeln(`<script src="/cdn/popper.min.js"></script>`);
+document.writeln(`<script src="/cdn/jquery-3.5.1.js"></script>`);
+document.writeln(`<script src="/cdn/jquery.dataTables.min.js"></script>`);
+document.writeln(`<script src="/cdn/dataTables.bootstrap5.min.js"></script>`);
 
+/**
+ * 
+ * @param {String} data 
+ * @param {Number} spaces 
+ * @returns 
+ */
 function formatDate(data, spaces) {
+    if (data[data.length - 1] === "Z") {
+        data = data.slice(0, -1);
+    }
     function appendZero(n) {
-        if(n <= 9) {
+        if (n <= 9) {
             return "0" + n;
         }
 
@@ -14,13 +23,18 @@ function formatDate(data, spaces) {
     }
 
     let date = new Date(data);
-    let res = appendZero(date.getHours()) + ':' + appendZero(date.getMinutes());
+    let res = appendZero(date.getHours()) + ":" + appendZero(date.getMinutes());
 
-    while(spaces--) {
-        res += '\xa0';
+    while (spaces--) {
+        res += "\xa0";
     }
 
-    res += appendZero(date.getDate()) + '/' + appendZero(date.getMonth() + 1) + '/' + date.getFullYear();
+    res +=
+        appendZero(date.getDate()) +
+        "/" +
+        appendZero(date.getMonth() + 1) +
+        "/" +
+        date.getFullYear();
 
     return res;
 }
