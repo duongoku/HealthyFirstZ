@@ -3,6 +3,7 @@
     <head>
         <title>FoodShop</title>
         <meta charset="utf-8" />
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/cdn/bootstrap.min.css" rel="stylesheet" />
         <script src="/cdn/bootstrap.bundle.min.js"></script>
@@ -19,7 +20,7 @@
         />
         <button
             type="button"
-            onclick="logout()"
+            id="logoutButton"
             class="btn btn-light"
             style="float: right; margin-right: 20px; margin-top: 10px"
         >
@@ -163,8 +164,8 @@
                         </button>
                         <button
                             type="button"
-                            onclick="issueCert()"
                             class="btn btn-primary"
+                            id="issueCert"
                             data-bs-dismiss="modal"
                         >
                             Lưu thay đổi
@@ -215,7 +216,7 @@
                         </button>
                         <button
                             type="button"
-                            onclick="extendCert()"
+                            id="extendCert"
                             class="btn btn-primary"
                             data-bs-dismiss="modal"
                         >
@@ -262,8 +263,7 @@
                         </button>
                         <button
                             type="button"
-                            id="cancelSaveChange"
-                            onclick="cancelCert()"
+                            id="cancelCert"
                             class="btn btn-primary"
                             data-bs-dismiss="modal"
                         >
@@ -273,6 +273,6 @@
                 </div>
             </div>
         </div>
-        <script src="shopinfo.js"></script>
+        <script unsafe-inline src="shopinfo.js"></script>
     </body>
 </html>

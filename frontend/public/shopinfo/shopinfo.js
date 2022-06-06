@@ -63,7 +63,9 @@ function getShopInfo() {
         });
 }
 
-function issueCert() {
+
+
+document.getElementById("issueCert").onclick = function () {
     const dateEl = document.getElementById("date1").value;
     const timeEl = document.getElementById("time1").value;
     const combinedTime = `${dateEl}T${timeEl}:00.000Z`;
@@ -91,7 +93,7 @@ function issueCert() {
         });
 }
 
-function extendCert() {
+document.getElementById("extendCert").onclick = function () {
     var dateEl = document.getElementById("date2").value;
     var timeEl = document.getElementById("time2").value;
     const combinedTime = `${dateEl}T${timeEl}:00.000Z`;
@@ -119,7 +121,7 @@ function extendCert() {
         });
 }
 
-function cancelCert() {
+document.getElementById("cancelCert").onclick = function () {
     fetch(`/shops/${shopId}/users/${userId}`, {
         method: "PATCH",
         headers: {
