@@ -121,3 +121,5 @@ $(document).ready(async function () {
         ],
     });
 });
+
+document.getElementById("logoutButton").onclick = logout;

@@ -139,3 +139,5 @@ $(document).ready(function () {
         table.draw();
     });
 });
+
+document.getElementById("logoutButton").onclick = logout;

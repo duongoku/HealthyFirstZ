@@ -26,3 +26,5 @@ function login() {
             console.log(error);
         });
 }
+
+document.getElementById("loginButton").onclick = login;

@@ -49,3 +49,5 @@ fetch(`/tests/${testId}`, {
         document.querySelector(".card").appendChild(header);
         document.querySelector(".card").appendChild(body);
     });
+
+document.getElementById("logoutButton").onclick = logout;

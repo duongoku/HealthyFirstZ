@@ -40,3 +40,5 @@ fetch(`/users/${currentUser}`, {
     .catch((error) => {
         console.log(error);
     });
+
+document.getElementById("logoutButton").onclick = logout;

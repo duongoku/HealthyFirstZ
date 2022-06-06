@@ -40,5 +40,13 @@ function formatDate(data, spaces) {
 }
 
 function logout() {
-    window.location.href = "../login/login.html";
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("currentUser");
+    window.location.href = "/login";
+}
+
+// Check if token is in localStorage
+if (localStorage.getItem("accessToken") === null || localStorage.getItem("refreshToken") === null || localStorage.getItem("currentUser") === null) {
+    window.location.href = "/login";
 }
