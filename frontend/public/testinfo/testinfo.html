@@ -70,14 +70,120 @@
         <!-- End navigation bar -->
 
         <div class="container">
-            <div class="container">
-                <div
-                    class="row height d-flex justify-content-center align-items-center"
-                >
-                    <div class="row" style="padding: 10px">
-                        <div class="col-md-10">
-                            <div class="card"></div>
+            <div class="row col-md-3" style="padding-left: 25px;">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateResult">
+                    Cập nhật kết quả thanh tra
+                </button>
+            </div>
+
+            <div
+                class="row height d-flex justify-content-center align-items-center"
+            >
+                <div class="row" style="padding: 10px">
+                    <div class="col-md-10">
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="updateResult"
+            tabindex="-1"
+            aria-labelledby="updateResultLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateResultLabel">
+                            Cập nhật kết quả thanh tra
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row-md-1">
+                            Ngày thực hiện:
                         </div>
+                        
+                        <div class="datetimepicker">
+                            <input type="date" id="dateAt" value="2022-01-01" />
+                            <span></span>
+                            <input type="time" id="timeAt" value="00:00" />
+                        </div> <br />
+
+                        <div class="row-md-1">
+                            Ngày trả kết quả:
+                        </div>
+                        
+                        <div class="datetimepicker">
+                            <input type="date" id="dateReturn" value="2022-01-01" />
+                            <span></span>
+                            <input type="time" id="timeReturn" value="00:00" />
+                        </div> <br />
+
+                        <div class="row-md-1">
+                            Trạng thái:
+                        </div>
+
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="status"
+                            name="status"
+                        >
+                            <option value="Đang xử lý">Đang xử lý</option>
+                            <option value="Đã xử lý xong">Đã xử lý xong</option>
+                            <option value="Đã bị hủy">Đã bị hủy</option>
+                        </select>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Kết quả:
+                        </div>
+
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="result"
+                            name="result"
+                        >
+                            <option value="Đạt">Đạt</option>
+                            <option value="Không đạt">Không đạt</option>
+                        </select>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Đơn vị xử lý:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="unit">
+                        </div>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button
+                            type="button"
+                            id="updateResultBtn"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Cập nhật kết quả
+                        </button>
                     </div>
                 </div>
             </div>

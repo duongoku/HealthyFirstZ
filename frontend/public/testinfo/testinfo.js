@@ -51,3 +51,23 @@ fetch(`/tests/${testId}`, {
     });
 
 document.getElementById("logoutButton").onclick = logout;
+
+document.getElementById("updateResultBtn").onclick = function () {
+    let dateAt = document.getElementById("dateAt").value;
+    let timeAt = document.getElementById("timeAt").value;
+    let combinedTimeAt = `${dateAt}T${timeAt}:00.000Z`;
+
+    let dateReturn = document.getElementById("dateReturn").value;
+    let timeReturn = document.getElementById("timeReturn").value;
+    let combinedTimeReturn = `${dateReturn}T${timeReturn}:00.000Z`;
+
+    const status = document.getElementById("select").value;
+
+    const result = document.getElementById("result").value;
+
+    const unit = document.getElementById("unit").value;
+
+    alert("Đã cập nhật kết quả thanh tra!");
+
+    // do duongoku things
+}
