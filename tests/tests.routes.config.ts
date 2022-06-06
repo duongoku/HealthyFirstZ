@@ -27,8 +27,8 @@ export class TestsRoutes extends CommonRoutesConfig {
                 )
             )
             .post(
-                body("taken").isDate(),
-                body("result_date").isDate(),
+                body("taken").isISO8601(),
+                body("result_date").isISO8601(),
                 body("processing_unit").isString(),
                 body("result").isIn(results),
                 body("status").isIn(statuses),

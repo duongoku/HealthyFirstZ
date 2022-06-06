@@ -33,8 +33,8 @@ export class ExaminationsRoutes extends CommonRoutesConfig {
                 )
             )
             .post(
-                body("from").isDate(),
-                body("to").isDate(),
+                body("from").isISO8601(),
+                body("to").isISO8601(),
                 body("shop_id").isString(),
                 body("status").isIn(statuses),
                 BodyValidationMiddleware.verifyBodyFieldsErrors,

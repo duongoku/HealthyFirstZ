@@ -142,18 +142,69 @@ document.getElementById("cancelCert").onclick = function () {
         });
 };
 
+async function addNewExamination() {
+    const dateFrom = document.getElementById("dateFrom").value;
+    const timeFrom = document.getElementById("timeFrom").value;
+    const combinedTimeFrom = `${dateFrom}T${timeFrom}:00.000Z`;
+
+    const dateTo = document.getElementById("dateTo").value;
+    const timeTo = document.getElementById("timeTo").value;
+    const combinedTimeTo = `${dateTo}T${timeTo}:00.000Z`;
+
+    const status = document.getElementById("select").value;
+
+    try {
+        let newexam = await fetch(`/examinations/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify({
+                from: combinedTimeFrom,
+                to: combinedTimeTo,
+                shop_id: shopId,
+                status: status,
+            }),
+        });
+        newexam = await newexam.json();
+
+        let newtest = await fetch(`/tests/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify({
+                taken: combinedTimeFrom,
+                status: "Đang xử lý",
+                result: "Không đạt",
+                processing_unit: "Chưa xác định",
+                result_date: combinedTimeTo,
+            }),
+        });
+        newtest = await newtest.json();
+
+        await fetch(`/examinations/${newexam.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify({
+                test_id: newtest.id,
+            }),
+        });
+
+        alert("Đã lên kế hoạch thanh tra");
+    } catch (err) {
+        alert("Có lỗi xảy ra khi lên kế hoạch thanh tra");
+        console.log(err);
+    }
+}
+
 getShopInfo();
 
 document.getElementById("logoutButton").onclick = logout;
 
-document.getElementById("addPlanBtn").onclick = function () {
-    alert("Đã lên kế hoạch thanh tra");
-
-    let dateFrom = document.getElementById("dateFrom").value;
-    let timeFrom = document.getElementById("timeFrom").value;
-
-    let dateTo = document.getElementById("dateTo").value;
-    let timeTo = document.getElementById("timeTo").value;
-
-    // do duongoku things
-}
+document.getElementById("addPlanBtn").onclick = addNewExamination;
