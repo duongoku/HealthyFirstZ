@@ -128,11 +128,21 @@ $(document).ready(async function () {
 
     $("#delExam").on("click", function () {
         var data = table.row(".selected").data();
-        console.log(data._id);
 
-        // do duongoku things
-
-        alert("Xóa hoạt động thanh tra thành công!");
+        fetch(`/examinations/${data._id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        }).then((res) => {
+            if (res.status === 204) {
+                alert("Xóa hoạt động thành công");
+                table.ajax.reload();
+            } else {
+                throw new Error("Xóa hoạt động thất bại");
+            }
+        });
     })
 });
 
