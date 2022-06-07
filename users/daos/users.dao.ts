@@ -34,7 +34,7 @@ class UsersDao {
         const user = new this.User({
             ...userFields,
             _id: userId,
-            permissionFlags: PermissionFlag.SPECIALIST_PERMISSION,
+            // permissionFlags: PermissionFlag.SPECIALIST_PERMISSION,
         });
         await user.save();
         return userId;
