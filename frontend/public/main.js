@@ -5,10 +5,10 @@ document.writeln(`<script src="/cdn/jquery.dataTables.min.js"></script>`);
 document.writeln(`<script src="/cdn/dataTables.bootstrap5.min.js"></script>`);
 
 /**
- * 
- * @param {String} data 
- * @param {Number} spaces 
- * @returns 
+ *
+ * @param {String} data
+ * @param {Number} spaces
+ * @returns
  */
 function formatDate(data, spaces) {
     if (data[data.length - 1] === "Z") {
@@ -47,8 +47,24 @@ function logout() {
 }
 
 // Check if token is in localStorage
-if (localStorage.getItem("accessToken") === null || localStorage.getItem("refreshToken") === null || localStorage.getItem("currentUser") === null) {
+if (
+    localStorage.getItem("accessToken") === null ||
+    localStorage.getItem("refreshToken") === null ||
+    localStorage.getItem("currentUser") === null
+) {
     if (window.location.href.indexOf("/login") === -1) {
-        window.location.href = "/login";
+        logout();
     }
+} else {
+    fetch(`/users/${localStorage.getItem("currentUser")}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+    }).then((res) => {
+        if (res.status === 401 || res.status === 403 || res.status === 404) {
+            logout();
+        }
+    });
 }
