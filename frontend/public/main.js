@@ -3,6 +3,8 @@ document.writeln(`<script src="/cdn/popper.min.js"></script>`);
 document.writeln(`<script src="/cdn/jquery-3.5.1.js"></script>`);
 document.writeln(`<script src="/cdn/jquery.dataTables.min.js"></script>`);
 document.writeln(`<script src="/cdn/dataTables.bootstrap5.min.js"></script>`);
+document.writeln(`<script src="/cdn/dataTables.buttons.min.js"></script>`);
+document.writeln(`<script src="/cdn/dataTables.select.min.js"></script>`);
 
 /**
  *

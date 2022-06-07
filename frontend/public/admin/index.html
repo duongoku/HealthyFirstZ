@@ -7,7 +7,12 @@
         <link href="/cdn/bootstrap.min.css" rel="stylesheet" />
         <script src="/cdn/bootstrap.bundle.min.js"></script>
         <script src="/main.js"></script>
-        <link rel="stylesheet" href="style.css" />
+        <style>
+            #adminTable tbody tr.selected {
+                color: white;
+                background-color: #66D3FA;
+            }
+        </style>
     </head>
     <body>
         <input hidden id="testId" name="testId" value="put testId here" />
@@ -24,25 +29,119 @@
             <div
                 class="row height d-flex justify-content-center align-items-center"
             >
-                <div
-                    class="row height d-flex justify-content-center align-items-center"
-                >
-                    <div class="col-md-10" style="padding-top: 20px">
-                        <table
-                            class="table table-hover table-responsive"
-                            id="adminTable"
+                <div class="col-md-10" style="padding-top: 20px">
+                    <table
+                        class="table table-hover table-responsive display"
+                        id="adminTable"
+                    >
+                        <thead>
+                            <tr>
+                                <th>Tên tài khoản</th>
+                                <th>Họ</th>
+                                <th>Tên</th>
+                                <th>Địa bàn</th>
+                                <th>Quyền hạn</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-5">
+                    <button type="button" class="btn btn-primary" id="updateBtn" data-bs-toggle="modal" data-bs-target="#updateAccModal">
+                        Cập nhật
+                    </button>
+                </div>
+            
+            </div>
+        </div>
+
+        <!-- update account modal -->
+        <div
+            class="modal fade"
+            id="updateAccModal"
+            tabindex="-1"
+            aria-labelledby="updateAccModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateAccModalLabel">
+                            Cập nhật tài khoản
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Họ:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="lastName">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Tên:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="firstName">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Địa bàn:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="ward">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Quyền hạn:
+                        </div>
+                        
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="permission"
+                            name="permission"
                         >
-                            <thead>
-                                <tr>
-                                    <th>Tên tài khoản</th>
-                                    <th>Họ</th>
-                                    <th>Tên</th>
-                                    <th>Địa bàn</th>
-                                    <th>Quyền hạn</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                            <option value="1">Chuyên viên</option>
+                            <option value="3">Quản lý hệ thống</option>
+                        </select>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Mật khẩu:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="password" class="form-control" aria-describedby="input-group-left" id="password">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button
+                            type="button"
+                            id="updateAcc"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Cập nhật
+                        </button>
                     </div>
                 </div>
             </div>
