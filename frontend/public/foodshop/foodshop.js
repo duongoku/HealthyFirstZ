@@ -140,22 +140,55 @@ $(document).ready(function () {
     });
 });
 
-document.getElementById("addShop").onclick = function() {
+document.getElementById("addShop").onclick = function () {
     var shopName = document.getElementById("shopName").value;
     var shopAddress = document.getElementById("shopAddress").value;
     var shopPhone = document.getElementById("shopPhone").value;
     var shopWard = document.getElementById("shopWard").value;
     var shopType = document.getElementById("shopType").value;
 
-    var dateTo = document.getElementById("dateTo").value;
-    var timeTo = document.getElementById("timeTo").value;
-    const combinedTimeTo = `${dateTo}T${timeTo}:00.000Z`;
+    if (
+        shopName === "" ||
+        shopAddress === "" ||
+        shopPhone === "" ||
+        shopWard === "" ||
+        shopType === ""
+    ) {
+        alert("Vui lòng điền đầy đủ thông tin");
+        return;
+    }
 
-    console.log(shopName, shopAddress, shopPhone, shopWard, shopType, combinedTimeTo);
+    // Check if phone number is not valid
+    if (!shopPhone.match(/^[0-9]{10,11}$/)) {
+        alert("Số điện thoại không hợp lệ");
+        return;
+    }
 
-    // do duongoku things
-
-    alert("Đã thêm cửa hàng");
-}
+    fetch(`/shops/create`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({
+            name: shopName,
+            address: shopAddress,
+            ward: shopWard,
+            phone: shopPhone,
+            type: shopType,
+        }),
+    })
+        .then((res) => {
+            if (res.status === 201) {
+                alert("Thêm cửa hàng thành công");
+                window.location.reload();
+            } else {
+                throw new Error("Thêm cửa hàng thất bại");
+            }
+        })
+        .catch((err) => {
+            alert(err);
+        });
+};
 
 document.getElementById("logoutButton").onclick = logout;
