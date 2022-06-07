@@ -64,8 +64,21 @@ export class ShopsRoutes extends CommonRoutesConfig {
                 ShopsMiddleware.checkShopManagedByUser
             )
             .get(ShopsController.getShopById)
-            .patch(ShopsController.patch)
             .delete(ShopsController.removeShop);
+
+        this.app
+            .route("/shops/:shopId/users/:userId")
+            .all(
+                body("phone").isNumeric(),
+                body("type").isIn(shop_types),
+                BodyValidationMiddleware.verifyBodyFieldsErrors,
+                ShopsMiddleware.validateShopExists,
+                UsersMiddleware.validateUserExists,
+                jwtMiddleware.validJWTNeeded,
+                permissionMiddleware.onlySameUserOrAdminCanDoThisAction,
+                ShopsMiddleware.checkShopManagedByUser
+            )
+            .patch(ShopsController.patch);
 
         return this.app;
     }
