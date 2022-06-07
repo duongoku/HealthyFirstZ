@@ -1,5 +1,7 @@
 const testId = document.getElementById("testId").value;
 
+var bigCur;
+
 async function loadTest() {
     fetch(`/tests/${testId}`, {
         method: "GET",
@@ -12,6 +14,7 @@ async function loadTest() {
             return response.json();
         })
         .then((cur) => {
+            bigCur = cur;
             let header = document.createElement("div");
             header.classList.add("card-header");
             header.innerHTML = "<b>Hoạt động kiểm định</b>";
@@ -29,6 +32,7 @@ async function loadTest() {
                 tmp_2 +
                 formatDate(cur.taken, 1) +
                 tmp_3;
+            
 
             body.innerHTML += tmp_1 + "Trạng thái" + tmp_2 + cur.status + tmp_3;
 
@@ -39,7 +43,7 @@ async function loadTest() {
                 result = "<span class='text-danger'>Không đạt</span>";
             }
             body.innerHTML += tmp_1 + "Kết quả" + tmp_2 + result + tmp_3;
-
+            
             body.innerHTML +=
                 tmp_1 + "Đơn vị xử lý" + tmp_2 + cur.processing_unit + tmp_3;
 
@@ -101,6 +105,26 @@ async function updateTest() {
             alert("Cập nhật thất bại!");
         });
 }
+
+document.getElementById("updateResult").addEventListener("shown.bs.modal", function() {
+    var curTaken = formatDate(bigCur.taken, 1);
+    curTaken = curTaken.split('\xa0');
+    curTakenDate = curTaken[1].split('/');
+    
+    var curRes = formatDate(bigCur.result_date, 1);
+    curRes = curRes.split('\xa0');
+    curResDate = curRes[1].split('/');
+
+    document.getElementById("dateAt").value = curTakenDate[2] + "-" + curTakenDate[1] + "-" + curTakenDate[0];
+    document.getElementById("timeAt").value =  curTaken[0];
+
+    document.getElementById("dateReturn").value = curResDate[2] + "-" + curResDate[1] + "-" + curResDate[0];
+    document.getElementById("timeReturn").value = curRes[0];
+
+    document.getElementById("status").value = bigCur.status;
+    document.getElementById("result").value = bigCur.result;
+    document.getElementById("unit").value = bigCur.processing_unit;
+});
 
 document.getElementById("logoutButton").onclick = logout;
 
