@@ -82,7 +82,8 @@ $(document).ready(function () {
                     // change color of certificate
                     if (
                         row["validBefore"] !== undefined &&
-                        new Date(row["validBefore"]) < new Date()
+                        new Date(row["validBefore"]) < new Date() &&
+                        data === false
                     ) {
                         return $("<span>")
                             .attr("class", "text-warning")
@@ -92,7 +93,7 @@ $(document).ready(function () {
                             .html();
                     }
 
-                    if (data) {
+                    if (data === true) {
                         return $("<span>")
                             .attr("class", "text-success")
                             .text("Còn hiệu lực")
