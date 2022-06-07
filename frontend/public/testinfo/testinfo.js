@@ -14,7 +14,7 @@ async function loadTest() {
         .then((cur) => {
             let header = document.createElement("div");
             header.classList.add("card-header");
-            header.innerHTML = "<b>Hoạt động thanh tra</b>";
+            header.innerHTML = "<b>Hoạt động kiểm định</b>";
 
             let body = document.createElement("div");
             body.classList.add("card-body");
@@ -90,7 +90,7 @@ async function updateTest() {
     })
         .then((response) => {
             if (response.status === 204) {
-                alert("Đã cập nhật kết quả thanh tra!");
+                alert("Đã cập nhật kết quả kiểm định!");
                 loadTest();
             } else {
                 alert("Cập nhật thất bại!");
