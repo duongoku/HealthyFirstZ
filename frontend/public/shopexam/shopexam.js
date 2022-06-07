@@ -55,16 +55,15 @@ $(document).ready(async function () {
                 targets: 0,
                 render: function (data, type, row, meta) {
                     if (type === "display") {
-                        let shopname = row.shop_id;
                         for (let i = 0; i < shops.length; i++) {
                             if (shops[i]._id === data) {
-                                shopname = shops[i].name;
+                                row.shop_id = shops[i].name;
                                 break;
                             }
                         }
                         return $("<a>")
                             .attr("href", `/shopinfo/${data}`)
-                            .text(shopname)
+                            .text(row.shop_id)
                             .wrap("<div></div>")
                             .parent()
                             .html();
@@ -77,16 +76,15 @@ $(document).ready(async function () {
                 targets: 4,
                 render: function (data, type, row, meta) {
                     if (type === "display") {
-                        let testresult = row.test_id;
                         for (let i = 0; i < tests.length; i++) {
                             if (tests[i]._id === data) {
-                                testresult = tests[i].status;
+                                row.test_id = tests[i].status;
                                 break;
                             }
                         }
                         return $("<a>")
                             .attr("href", `/testinfo/${data}`)
-                            .text(testresult)
+                            .text(row.test_id)
                             .wrap("<div></div>")
                             .parent()
                             .html();
