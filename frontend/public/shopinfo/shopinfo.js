@@ -110,7 +110,6 @@ document.getElementById("extendCert").onclick = function () {
         body: JSON.stringify({
             phone: bigCur.phone,
             type: bigCur.type,
-            isValid: true,
             validBefore: combinedTime,
         }),
     })
