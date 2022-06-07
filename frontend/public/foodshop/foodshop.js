@@ -138,57 +138,57 @@ $(document).ready(function () {
     $("#select").on("change", function () {
         table.draw();
     });
-});
 
-document.getElementById("addShop").onclick = function () {
-    var shopName = document.getElementById("shopName").value;
-    var shopAddress = document.getElementById("shopAddress").value;
-    var shopPhone = document.getElementById("shopPhone").value;
-    var shopWard = document.getElementById("shopWard").value;
-    var shopType = document.getElementById("shopType").value;
+    document.getElementById("addShop").onclick = function () {
+        var shopName = document.getElementById("shopName").value;
+        var shopAddress = document.getElementById("shopAddress").value;
+        var shopPhone = document.getElementById("shopPhone").value;
+        var shopWard = document.getElementById("shopWard").value;
+        var shopType = document.getElementById("shopType").value;
 
-    if (
-        shopName === "" ||
-        shopAddress === "" ||
-        shopPhone === "" ||
-        shopWard === "" ||
-        shopType === ""
-    ) {
-        alert("Vui lòng điền đầy đủ thông tin");
-        return;
-    }
+        if (
+            shopName === "" ||
+            shopAddress === "" ||
+            shopPhone === "" ||
+            shopWard === "" ||
+            shopType === ""
+        ) {
+            alert("Vui lòng điền đầy đủ thông tin");
+            return;
+        }
 
-    // Check if phone number is not valid
-    if (!shopPhone.match(/^[0-9]{10,11}$/)) {
-        alert("Số điện thoại không hợp lệ");
-        return;
-    }
+        // Check if phone number is not valid
+        if (!shopPhone.match(/^[0-9]{10,11}$/)) {
+            alert("Số điện thoại không hợp lệ");
+            return;
+        }
 
-    fetch(`/shops/create`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify({
-            name: shopName,
-            address: shopAddress,
-            ward: shopWard,
-            phone: shopPhone,
-            type: shopType,
-        }),
-    })
-        .then((res) => {
-            if (res.status === 201) {
-                alert("Thêm cửa hàng thành công");
-                window.location.reload();
-            } else {
-                throw new Error("Thêm cửa hàng thất bại");
-            }
+        fetch(`/shops/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify({
+                name: shopName,
+                address: shopAddress,
+                ward: shopWard,
+                phone: shopPhone,
+                type: shopType,
+            }),
         })
-        .catch((err) => {
-            alert(err);
-        });
-};
+            .then((res) => {
+                if (res.status === 201) {
+                    alert("Thêm cửa hàng thành công");
+                    table.ajax.reload();
+                } else {
+                    throw new Error("Thêm cửa hàng thất bại");
+                }
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    };
+});
 
 document.getElementById("logoutButton").onclick = logout;
