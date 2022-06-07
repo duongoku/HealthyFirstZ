@@ -73,7 +73,8 @@
             <div
                 class="row height d-flex justify-content-center align-items-center"
             >
-                <div class="col-md-10" style="padding-top: 20px">
+                <div class="col-md-10" style="padding-top: 20px; padding-bottom: 15px;">
+
                     <table
                         class="table table-hover table-responsive"
                         id="examTable"
@@ -89,6 +90,60 @@
                         </thead>
                         <tbody></tbody>
                     </table>
+
+                    <div class="col-md-5 height d-flex justify-content-center align-items-center">
+                        <button type="button" class="btn btn-danger" id="delBtn" data-bs-toggle="modal" data-bs-target="#delExamModal">
+                            Hủy hoạt động thanh tra
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- del exam modal -->
+        <div
+            class="modal fade"
+            id="delExamModal"
+            tabindex="-1"
+            aria-labelledby="delExamModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delExamModalLabel">
+                            Xóa hoạt động thanh tra
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn <b>xóa</b> hoạt động thanh tra?
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Không
+                        </button>
+                        <button
+                            type="button"
+                            id="delExam"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal"
+                        >
+                            Có
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

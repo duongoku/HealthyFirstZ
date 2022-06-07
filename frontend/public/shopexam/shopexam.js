@@ -31,6 +31,7 @@ $(document).ready(async function () {
 
     const table = $("#examTable").DataTable({
         searching: true,
+        select: true,
         ajax: {
             url: `/examinations/managedby/${localStorage.getItem(
                 "currentUser"
@@ -115,6 +116,24 @@ $(document).ready(async function () {
             },
         ],
     });
+
+    $("#delExamModal").on("shown.bs.modal", function () {
+        var data = table.row(".selected").data();
+        if (data == undefined) {
+            $("#delExamModal").modal("hide");
+            alert("Chưa chọn hoạt động thanh tra cần xóa!");
+            return;
+        }
+    });
+
+    $("#delExam").on("click", function () {
+        var data = table.row(".selected").data();
+        console.log(data._id);
+
+        // do duongoku things
+
+        alert("Xóa hoạt động thanh tra thành công!");
+    })
 });
 
 document.getElementById("logoutButton").onclick = logout;

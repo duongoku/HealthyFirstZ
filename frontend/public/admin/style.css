@@ -6,3 +6,8 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+#adminTable tbody tr.selected {
+    color: white;
+    background-color: #66D3FA;
+}
