@@ -136,7 +136,6 @@ $(document).ready(function () {
     });
 
     $("#select").on("change", function () {
-        console.log("keyup");
         table.draw();
     });
 });
