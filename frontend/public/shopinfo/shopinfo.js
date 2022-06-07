@@ -30,8 +30,7 @@ function getShopInfo() {
 
             body.innerHTML = tmp_1 + "Địa chỉ" + tmp_2 + cur.address + tmp_3;
 
-            body.innerHTML +=
-                tmp_1 + "Địa bàn" + tmp_2 + cur.ward + tmp_3;
+            body.innerHTML += tmp_1 + "Địa bàn" + tmp_2 + cur.ward + tmp_3;
 
             body.innerHTML +=
                 tmp_1 + "Số điện thoại" + tmp_2 + cur.phone + tmp_3;
@@ -213,27 +212,80 @@ document.getElementById("logoutButton").onclick = logout;
 
 document.getElementById("addPlanBtn").onclick = addNewExamination;
 
-document.getElementById("updateShopModal").addEventListener('shown.bs.modal', function () {
-    document.getElementById("shopName").value = bigCur.name;
-    document.getElementById("shopAddress").value = bigCur.address;
-    document.getElementById("shopWard").value = bigCur.ward;
-    document.getElementById("shopPhone").value = bigCur.phone;
-    document.getElementById("shopType").value = bigCur.type;
-});
+document
+    .getElementById("updateShopModal")
+    .addEventListener("shown.bs.modal", function () {
+        document.getElementById("shopName").value = bigCur.name;
+        document.getElementById("shopAddress").value = bigCur.address;
+        document.getElementById("shopWard").value = bigCur.ward;
+        document.getElementById("shopPhone").value = bigCur.phone;
+        document.getElementById("shopType").value = bigCur.type;
+    });
 
-document.getElementById("updateShop").onclick = function() {
+document.getElementById("updateShop").onclick = function () {
     var shopName = document.getElementById("shopName").value;
     var address = document.getElementById("shopAddress").value;
     var ward = document.getElementById("shopWard").value;
     var phone = document.getElementById("shopPhone").value;
     var type = document.getElementById("shopType").value;
 
-    console.log(shopName, address, ward, phone, type);
-    alert("Đã cập nhật thông tin cửa hàng");
-    // do duongoku things
-}
+    if (
+        shopName.length === 0 ||
+        address.length === 0 ||
+        ward.length === 0 ||
+        phone.length === 0 ||
+        type.length === 0
+    ) {
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return;
+    }
 
-document.getElementById("deleteShop").onclick = function() {
-    alert("Đã xóa cửa hàng");
-    // do duongoku things
-}
+    fetch(`/shops/${shopId}/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({
+            name: shopName,
+            address: address,
+            ward: ward,
+            phone: phone,
+            type: type,
+        }),
+    })
+        .then(function (response) {
+            if (response.status === 204) {
+                alert("Đã cập nhật thông tin cửa hàng");
+                getShopInfo();
+            } else {
+                alert("Có lỗi xảy ra khi cập nhật thông tin cửa hàng");
+            }
+        })
+        .catch(function (err) {
+            alert("Có lỗi xảy ra khi cập nhật thông tin cửa hàng");
+            console.log(err);
+        });
+};
+
+document.getElementById("deleteShop").onclick = function () {
+    fetch(`/shops/${shopId}/users/${userId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+    })
+        .then(function (response) {
+            if (response.status === 204) {
+                alert("Đã xóa cửa hàng");
+                window.location.href = "/foodshop";
+            } else {
+                alert("Có lỗi xảy ra khi xóa cửa hàng");
+            }
+        })
+        .catch(function (err) {
+            alert("Có lỗi xảy ra khi xóa cửa hàng");
+            console.log(err);
+        });
+};
