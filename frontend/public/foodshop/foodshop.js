@@ -140,4 +140,22 @@ $(document).ready(function () {
     });
 });
 
+document.getElementById("addShop").onclick = function() {
+    var shopName = document.getElementById("shopName").value;
+    var shopAddress = document.getElementById("shopAddress").value;
+    var shopPhone = document.getElementById("shopPhone").value;
+    var shopWard = document.getElementById("shopWard").value;
+    var shopType = document.getElementById("shopType").value;
+
+    var dateTo = document.getElementById("dateTo").value;
+    var timeTo = document.getElementById("timeTo").value;
+    const combinedTimeTo = `${dateTo}T${timeTo}:00.000Z`;
+
+    console.log(shopName, shopAddress, shopPhone, shopWard, shopType, combinedTimeTo);
+
+    // do duongoku things
+
+    alert("Đã thêm cửa hàng");
+}
+
 document.getElementById("logoutButton").onclick = logout;
