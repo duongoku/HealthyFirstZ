@@ -1,6 +1,8 @@
 const shopId = document.getElementById("shopId").value;
 const userId = localStorage.getItem("currentUser");
 
+var bigCur;
+
 function getShopInfo() {
     fetch(`/shops/${shopId}/users/${userId}`, {
         method: "GET",
@@ -13,6 +15,8 @@ function getShopInfo() {
             return response.json();
         })
         .then((cur) => {
+            bigCur = cur;
+
             let header = document.createElement("div");
             header.classList.add("card-header");
             header.innerHTML = "<b>" + cur.name + "</b>";
@@ -27,7 +31,7 @@ function getShopInfo() {
             body.innerHTML = tmp_1 + "Địa chỉ" + tmp_2 + cur.address + tmp_3;
 
             body.innerHTML +=
-                tmp_1 + "Thanh tra phụ trách" + tmp_2 + cur.ward + tmp_3;
+                tmp_1 + "Địa bàn" + tmp_2 + cur.ward + tmp_3;
 
             body.innerHTML +=
                 tmp_1 + "Số điện thoại" + tmp_2 + cur.phone + tmp_3;
@@ -208,3 +212,28 @@ getShopInfo();
 document.getElementById("logoutButton").onclick = logout;
 
 document.getElementById("addPlanBtn").onclick = addNewExamination;
+
+document.getElementById("updateShopModal").addEventListener('shown.bs.modal', function () {
+    document.getElementById("shopName").value = bigCur.name;
+    document.getElementById("shopAddress").value = bigCur.address;
+    document.getElementById("shopWard").value = bigCur.ward;
+    document.getElementById("shopPhone").value = bigCur.phone;
+    document.getElementById("shopType").value = bigCur.type;
+});
+
+document.getElementById("updateShop").onclick = function() {
+    var shopName = document.getElementById("shopName").value;
+    var address = document.getElementById("shopAddress").value;
+    var ward = document.getElementById("shopWard").value;
+    var phone = document.getElementById("shopPhone").value;
+    var type = document.getElementById("shopType").value;
+
+    console.log(shopName, address, ward, phone, type);
+    alert("Đã cập nhật thông tin cửa hàng");
+    // do duongoku things
+}
+
+document.getElementById("deleteShop").onclick = function() {
+    alert("Đã xóa cửa hàng");
+    // do duongoku things
+}

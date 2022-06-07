@@ -76,11 +76,29 @@
         <!-- End navigation bar -->
 
         <div class="container">
-            <div class="row col-md-2" style="padding-left: 25px;">
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addPlan">
-                    Lên kế hoạch thanh tra
-                </button>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addPlan">
+                        Lên kế hoạch thanh tra
+                    </button>
+                </div>
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateShopModal">
+                        Cập nhật thông tin
+                    </button>
+                </div>
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delShopModal">
+                        Xóa cơ sở thực phẩm
+                    </button>
+                </div>
             </div>
+
+            <!-- <div class="row col-md-2" style="padding-left: 25px;">
+                
+            </div> -->
 
             <div
                 class="row height d-flex justify-content-center align-items-center"
@@ -256,7 +274,7 @@
                     </div>
 
                     <div class="modal-body">
-                        Bạn chắc chắn muốn hủy chứng nhận của cửa hàng này ?
+                        Bạn chắc chắn muốn <b>hủy</b> chứng nhận của cửa hàng này ?
                     </div>
 
                     <div class="modal-footer">
@@ -270,7 +288,7 @@
                         <button
                             type="button"
                             id="cancelCert"
-                            class="btn btn-primary"
+                            class="btn btn-danger"
                             data-bs-dismiss="modal"
                         >
                             Hủy chứng nhận
@@ -359,6 +377,139 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal update shop-->
+        <div
+            class="modal fade"
+            id="updateShopModal"
+            tabindex="-1"
+            aria-labelledby="updateShopModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateShopModalLabel">
+                            Cập nhật thông tin
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Tên cơ sở:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="shopName">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Địa chỉ:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="shopAddress">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Địa bàn:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="shopWard">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Số điện thoại:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="shopPhone">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Loại hình kinh doanh:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="shopType">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy thay đổi
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="updateShop"
+                            data-bs-dismiss="modal"
+                        >
+                            Lưu thay đổi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal delete shop -->
+        <div
+            class="modal fade"
+            id="delShopModal"
+            tabindex="-1"
+            aria-labelledby="delShopModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delShopModalLabel">
+                            Xóa cửa hàng
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        Bạn chắc chắn muốn <b>xóa</b> thông tin về cửa hàng này?
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Không
+                        </button>
+                        <button
+                            type="button"
+                            id="deleteShop"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal"
+                        >
+                            Xóa cửa hàng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="shopinfo.js"></script>
     </body>
 </html>
