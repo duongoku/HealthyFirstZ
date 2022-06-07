@@ -240,6 +240,12 @@ document.getElementById("updateShop").onclick = function () {
         return;
     }
 
+    // Check if phone number is not valid
+    if (!phone.match(/^[0-9]{10,11}$/)) {
+        alert("Số điện thoại không hợp lệ");
+        return;
+    }
+
     fetch(`/shops/${shopId}/users/${userId}`, {
         method: "PATCH",
         headers: {
