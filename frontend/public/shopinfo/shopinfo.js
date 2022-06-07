@@ -78,6 +78,8 @@ document.getElementById("issueCert").onclick = function () {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify({
+            phone: bigCur.phone,
+            type: bigCur.type,
             isValid: true,
             validBefore: combinedTime,
         }),
@@ -106,6 +108,8 @@ document.getElementById("extendCert").onclick = function () {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify({
+            phone: bigCur.phone,
+            type: bigCur.type,
             isValid: true,
             validBefore: combinedTime,
         }),
@@ -130,6 +134,8 @@ document.getElementById("cancelCert").onclick = function () {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify({
+            phone: bigCur.phone,
+            type: bigCur.type,
             isValid: false,
         }),
     })
