@@ -7,6 +7,7 @@
         <link href="/cdn/bootstrap.min.css" rel="stylesheet" />
         <script src="/cdn/bootstrap.bundle.min.js"></script>
         <script src="/main.js"></script>
+        <link rel="stylesheet" href="style.css" />
         <style>
             #adminTable tbody tr.selected {
                 color: white;
@@ -24,6 +25,55 @@
         >
             Đăng xuất
         </button>
+
+        <!-- navigation bar -->
+        <div class="header" style="padding: 20px">
+            <h1>Healthy first</h1>
+        </div>
+        <nav
+            class="navbar navbar-expand-lg navbar-dark bg-dark"
+            style="padding: 10px; padding-left: 30px"
+        >
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/foodshop"
+                            >Quản lý cơ sở thực phẩm</a
+                        >
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shopexam"
+                            >Quản lý hoạt động thanh tra</a
+                        >
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user">Tài khoản</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <br />
+        <br />
+        <!-- End navigation bar -->
 
         <div class="container">
             <div
@@ -47,12 +97,25 @@
                     </table>
                 </div>
 
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-primary" id="updateBtn" data-bs-toggle="modal" data-bs-target="#updateAccModal">
-                        Cập nhật
-                    </button>
+                <div class="row height d-flex justify-content-center align-items-center" style="padding-bottom: 10px;">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" id="updateBtn" data-bs-toggle="modal" data-bs-target="#updateAccModal">
+                            Cập nhật
+                        </button>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success" id="addBtn" data-bs-toggle="modal" data-bs-target="#addAccModal">
+                            Thêm tài khoản
+                        </button>
+                    </div>
+                
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger" id="delBtn" data-bs-toggle="modal" data-bs-target="#delAccModal">
+                            Xóa tài khoản
+                        </button>
+                    </div>
                 </div>
-            
             </div>
         </div>
 
@@ -141,6 +204,152 @@
                             data-bs-dismiss="modal"
                         >
                             Cập nhật
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- add account modal -->
+        <div
+            class="modal fade"
+            id="addAccModal"
+            tabindex="-1"
+            aria-labelledby="addAccModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addAccModalLabel">
+                            Tạo tài khoản
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Email:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="addemail">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Họ:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="addlastName">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Tên:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="addfirstName">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Địa bàn:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-describedby="input-group-left" id="addward">
+                        </div>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Quyền hạn:
+                        </div>
+                        
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="addpermission"
+                            name="permission"
+                        >
+                            <option value="1">Chuyên viên</option>
+                            <option value="3">Quản lý hệ thống</option>
+                        </select>
+
+                        <div class="row-md-1" style="padding-top: 10px;">
+                            Mật khẩu:
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="password" class="form-control" aria-describedby="input-group-left" id="addpassword">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Hủy
+                        </button>
+                        <button
+                            type="button"
+                            id="addAcc"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
+                            Tạo tài khoản
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- del account modal -->
+        <div
+            class="modal fade"
+            id="delAccModal"
+            tabindex="-1"
+            aria-labelledby="delAccModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delAccModalLabel">
+                            Xóa tài khoản
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn <b>xóa</b> tài khoản?
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Không
+                        </button>
+                        <button
+                            type="button"
+                            id="addAcc"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal"
+                        >
+                            Có
                         </button>
                     </div>
                 </div>

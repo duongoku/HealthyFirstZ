@@ -61,8 +61,33 @@ $(document).ready(function () {
         $("#updateAccModal").find("#lastName").val(data.lastName);
         $("#updateAccModal").find("#firstName").val(data.firstName);
         $("#updateAccModal").find("#ward").val(data.ward);
-        $("#updateAccModal").find("#permission").val(data.permissionFlags);
+        $("#updateAccModal").find("#permission").val(data.permissionFlags === 1 ? "1" : "3");
     })
+
+    $('#addAcc').click(function () {
+        // do duongoku things
+
+        var email = $("#addAccModal").find("#addemail").val();
+        var lastName = $("#addAccModal").find("#addlastName").val();
+        var firstName = $("#addAccModal").find("#addfirstName").val();
+        var ward = $("#addAccModal").find("#addward").val();
+        var password = $("#addAccModal").find("#addpassword").val();
+        var permission = $("#addAccModal").find("#addpermission").val();
+
+        console.log("Data: ", email, lastName, firstName, ward, password, permission);
+    });
+
+    $("#delAccModal").on('shown.bs.modal', function () {
+        var data = table.row('.selected').data();
+        console.log(data);
+        if (data == undefined) {
+            $("#delAccModal").modal('hide');
+            alert("Chưa chọn tài khoản cần xóa!");
+            return;
+        }
+
+        // do duongoku things
+    });
 });
 
 document.getElementById("logoutButton").onclick = logout;
