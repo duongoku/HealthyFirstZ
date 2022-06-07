@@ -187,6 +187,11 @@ $(document).ready(async function () {
             return;
         }
     });
+
+    $("#delAcc").click(function () {
+        alert("Đã xóa tài khoản");
+        // do duongoku things
+    });
 });
 
 document.getElementById("logoutButton").onclick = logout;
