@@ -189,8 +189,22 @@ $(document).ready(async function () {
     });
 
     $("#delAcc").click(function () {
-        alert("Đã xóa tài khoản");
-        // do duongoku things
+        var data = table.row(".selected").data();
+        fetch(`/users/${data._id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        }).then((res) => {
+            if (res.status === 204) {
+                alert("Xóa tài khoản thành công");
+                $("#delAccModal").modal("hide");
+                table.ajax.reload();
+            } else {
+                throw new Error("Xóa tài khoản thất bại");
+            }
+        });
     });
 });
 
